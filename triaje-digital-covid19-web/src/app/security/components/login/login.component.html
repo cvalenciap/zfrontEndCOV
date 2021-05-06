@@ -1,0 +1,77 @@
+<div class="container app-login">
+  <span openDialog></span>
+  <h1>Iniciar Sesión</h1>
+  <p>Llena todos los campos para ingresar a la plataforma Triaje Covid</p>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <div class="col">
+        <mat-form-field>
+          <input
+            matInput
+            formControlName="correo"
+            type="email"
+            placeholder="Correo electrónico"
+            autocomplete="off"
+            
+          />
+          <mat-error *ngIf="form.controls['correo'].errors?.email">
+            Ingrese un correo válido
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col">
+        <mat-form-field>
+          <input
+            matInput
+            formControlName="contrasena"
+            placeholder="Contraseña"
+            #contrasena
+            type="password"
+            maxlength="18"
+            autocomplete="off"
+          />
+          <button (click)="tooglePassword(contrasena)" mat-button mat-icon-button type="button" matSuffix>
+            <img src="assets/icons/icon-eye-{{ iconPass }}.svg">
+          </button>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="form-row mt-3">
+      <div class="col text-center">
+        <button
+          mat-flat-button
+          color="primary"
+          type="submit"
+          [disabled]="form.invalid || loading"
+        >
+          Iniciar Sesión
+        </button>
+        <br/>
+        <div *ngIf="loading; then: imgLoading"></div>
+      </div>
+    </div>
+    <div class="form-row mt-3">
+      <div class="col text-center">
+        <a class="sm" [routerLink]="['/iniciar-sesion/olvido-contrasena']"
+        >¿Olvidaste tu contraseña?</a
+        >
+      </div>
+    </div>
+    <div *ngIf="error" class="form-row mt-3 mb-3">
+      <div class="col text-center">
+        <div class="alert alert-danger">{{ error }}</div>
+      </div>
+    </div>
+  </form>
+  <p class="black-87 font-size-12">
+    ¿No tienes cuenta? <a [routerLink]="['/iniciar-sesion/registro']">Regístrate</a>
+  </p>
+</div>
+
+<ng-template #imgLoading>
+  <img
+    src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
+  />
+</ng-template>

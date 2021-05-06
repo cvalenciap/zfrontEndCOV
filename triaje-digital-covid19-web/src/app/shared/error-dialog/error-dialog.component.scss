@@ -1,0 +1,35 @@
+@import "variables";
+
+.header {
+  background-color: white;
+  margin-bottom: 0.4em;
+}
+
+.mat-icon {
+  vertical-align: middle;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2em;
+}
+
+.text-title {
+  font-size: 20px;
+  font-weight: 600;
+  font-family: $font-family;
+}
+
+.detail {
+  margin: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-detail {
+  font-size: 14px;
+  font-family: $font-family;
+}

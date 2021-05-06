@@ -1,0 +1,36 @@
+@import "variables";
+
+.banner {
+  background-color: $background-error;
+  height: 100vh;
+}
+
+.content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  .texto {
+    color: white;
+    font-size: 32px;
+    font-weight: 600;
+    font-family: $font-family;
+  }
+  .texto-mobile {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: $font-family;
+  }
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.logo {
+  height: 120px;
+  padding-bottom: 40px;
+}
+
+.logo-mobile {
+  height: 80px;
+  padding-bottom: 20px;
+}

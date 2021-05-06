@@ -1,0 +1,161 @@
+@import 'variables';
+
+%text {
+  color: $black;
+  font-family: $font-family;
+  font-size: $font-size;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 0.3px;
+  line-height: normal;
+  opacity: 0.54;
+}
+
+.app-home {
+  margin: 0 auto;
+  padding: 50px 0 30px;
+  text-align: center;
+  width: 90%;
+
+  h1 {
+    @extend %text;
+    font-size: 30px;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    line-height: 1;
+    opacity: 0.87;
+  }
+
+  form {
+    text-align: left;
+
+    .form-row {
+      margin-bottom: 5px;
+    }
+
+    .form-row > .col, .form-row > [class*=col-] {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    .mat-form-field-underline {
+      background: rgba(0, 0, 0, .12);
+    }
+
+    .mat-form-field-underline, .mat-form-field-subscript-wrapper {
+      position: initial;
+    }
+
+    .mat-form-field {
+      width: 100%;
+    }
+
+    .mat-form-field,
+    .mat-input-element,
+    .mat-form-field-label,
+    .mat-select,
+    .mat-hint,
+    .mat-flat-button {
+      font-family: $font-family;
+    }
+
+    .mat-hint {
+      font-size: 11px;
+      display: block;
+
+      &.invalid {
+        color: $invalid;
+      }
+    }
+
+    .mat-error {
+      height: 16px;
+    }
+
+    .mat-form-field-label-wrapper {
+      top: -0.5em;
+
+      .mat-form-field-label {
+        font-size: 12px;
+      }
+    }
+
+    .mat-form-field, .mat-input-element, .mat-option {
+      font-size: $font-size;
+    }
+
+    .mat-form-field-autofill-control + .mat-select-arrow-wrapper {
+      float: right;
+      margin-top: -10px;
+    }
+
+    .mat-form-field-invalid .mat-form-field-autofill-control + .mat-select-arrow-wrapper .mat-select-arrow {
+      color: $invalid;
+    }
+
+    .mat-checkbox {
+      .mat-checkbox-layout {
+        white-space: normal;
+      }
+
+      .mat-checkbox-label {
+        @extend %text;
+        font-size: 12px;
+        letter-spacing: normal;
+        line-height: 24px;
+      }
+
+      .mat-checkbox-inner-container {
+        height: 24px;
+        width: 24px;
+      }
+
+      .mat-checkbox-frame {
+        border: 1px solid rgba(0, 0, 0, .34);
+      }
+
+      &.ng-invalid.ng-touched .mat-checkbox-frame,
+      &.invalid-checkbox .mat-checkbox-frame {
+        border: 1px solid $invalid;
+      }
+
+      .mat-checkbox-ripple .mat-ripple-element,
+      &.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+        background-color: $grass !important;
+      }
+    }
+
+    .mat-flat-button.mat-primary {
+      @extend %primaryButton;
+    }
+  }
+
+  form + p {
+    margin: 40px auto;
+  }
+}
+
+@media (min-width: 340px) {
+  .app-home form .mat-checkbox .mat-checkbox-layout {
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 576px) {
+  .app-login {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .app-login {
+    width: 80%;
+
+    p {
+      width: 75%;
+    }
+  }
+}

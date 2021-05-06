@@ -1,0 +1,258 @@
+@import 'variables';
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body { font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.page-home {
+    height: 100%;
+    margin: 0;
+  
+    header,
+    aside,
+    section {
+      padding: 0;
+    }
+  
+    header {
+      align-items: center;
+      background-color: $azure;
+      display: flex;
+      justify-content: center;
+      left: 0;
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      z-index: 3;
+  
+      img {
+        height: 30px;
+      }
+    }
+  
+    aside {
+      display: none;
+      z-index: 2;
+    }
+  
+    section {
+      margin-top: 30px;
+      z-index: 1;
+    }
+}
+  
+form {
+    text-align: left;
+  
+    .form-row {
+      margin-bottom: 5px;
+    }
+  
+    .form-row > .col,
+    .form-row > [class*='col-'] {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  
+    .mat-form-field-underline {
+      background: rgba(0, 0, 0, 0.12);
+    }
+  
+    .mat-form-field-underline,
+    .mat-form-field-subscript-wrapper {
+      position: initial;
+    }
+  
+    .mat-form-field {
+      width: 100%;
+    }
+  
+    .mat-form-field,
+    .mat-input-element,
+    .mat-form-field-label,
+    .mat-select,
+    .mat-hint,
+    .mat-flat-button {
+      font-family: 'Open Sans';
+    }
+  
+    .mat-hint {
+      font-size: 11px;
+      display: block;
+  
+      &.invalid {
+        color: $invalid;
+      }
+    }
+  
+    .mat-error {
+      height: 16px;
+    }
+  
+    .mat-form-field-label-wrapper {
+      top: -0.5em;
+  
+      .mat-form-field-label {
+        font-size: 12px;
+      }
+    }
+  
+    .mat-form-field,
+    .mat-input-element,
+    .mat-option {
+      font-size: $font-size;
+    }
+  
+    .mat-form-field-autofill-control + .mat-select-arrow-wrapper {
+      float: right;
+      margin-top: -10px;
+    }
+  
+    .mat-form-field-invalid
+    .mat-form-field-autofill-control
+    + .mat-select-arrow-wrapper
+    .mat-select-arrow {
+      color: $invalid;
+    }
+  
+    .mat-checkbox {
+      .mat-checkbox-layout {
+        white-space: normal;
+      }
+  
+      .mat-checkbox-label {
+        @extend %text;
+        font-size: 12px;
+        letter-spacing: normal;
+        line-height: 24px;
+      }
+  
+      .mat-checkbox-inner-container {
+        height: 24px;
+        width: 24px;
+      }
+  
+      .mat-checkbox-frame {
+        border: 1px solid rgba(0, 0, 0, 0.34);
+      }
+  
+      &.ng-invalid.ng-touched .mat-checkbox-frame,
+      &.invalid-checkbox .mat-checkbox-frame {
+        border: 1px solid $invalid;
+      }
+  
+      .mat-checkbox-ripple .mat-ripple-element,
+      &.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+        background-color: $grass !important;
+      }
+    }
+  
+    .mat-flat-button.mat-primary {
+      @extend %primaryButton;
+    }
+}
+
+.mat-dialog-container {
+    border-radius: 21px !important;
+    margin: 10px 30px !important;
+    padding: 10px 30px !important;
+    position: relative;
+  
+    .mat-dialog-title {
+      @extend %text;
+      background-color: #edf1f8;
+      font-weight: 600;
+      margin: -10px -30px 30px;
+      padding: 15px 30px;
+      text-align: center;
+    }
+  
+    .mat-dialog-content {
+      @extend %text;
+      font-size: $font-size;
+      max-height: 300px;
+  
+      h3 {
+        font-size: $font-size;
+        margin: 2em 0;
+      }
+  
+      p {
+        color: $black-54 !important;
+        font-size: $font-size;
+        font-weight: 300 !important;
+        margin: 1em 0;
+      }
+  
+      &.dialog {
+        text-align: center;
+        padding: 10px 20px;
+  
+        > img {
+          width: 45px;
+        }
+  
+        h3 {
+          font-size: 16px;
+          font-weight: 600;
+        }
+  
+        p {
+          font-weight: normal;
+        }
+  
+        strong {
+          color: $black-87;
+          font-style: italic;
+          font-weight: 600;
+        }
+  
+        .mat-form-field-underline {
+          background: rgba(0, 0, 0, 0.12);
+        }
+  
+        .mat-form-field-wrapper {
+          padding-bottom: 0 !important;
+        }
+      }
+    }
+  
+    app-terms-conditions .mat-dialog-content {
+      max-height: 125px;
+    }
+  
+    .mat-flat-button.mat-primary {
+      @extend %primaryButton;
+    }
+  
+    .dialogImage-close {
+      background-image: url(assets/icons/icon-close.svg);
+      background-size: 100%;
+      content: '';
+      cursor: pointer;
+      display: block;
+      height: 16px;
+      min-width: 16px;
+      padding: 0;
+      position: absolute;
+      right: 16px;
+      top: 16px;
+      width: 16px;
+  
+      &:focus {
+        outline: none;
+      }
+  
+      .mat-button-focus-overlay {
+        display: none;
+      }
+    }
+}
+
+
+  

@@ -1,0 +1,29 @@
+<form [formGroup]="form" class="normal-form">
+    <div flex fxLayout="row">
+        <mat-form-field>
+            <input formControlName="fullName" matInput placeholder="Nombre complete*">
+            <mat-error>Este campo es obligatorio.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input formControlName="email" matInput placeholder="Correo">
+            <mat-error>Correo es inválido.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input formControlName="phone" matInput placeholder="Teléfono*">
+            <mat-error *ngIf="form.controls['phone'].errors?.required">Este campo es obligatorio.</mat-error>
+            <mat-error *ngIf="form.controls['phone'].errors?.minlength">Mínimo 7 dígitos son necesarios.</mat-error>
+        </mat-form-field>
+
+        <mat-radio-group formControlName="gender">
+            <mat-radio-button value="1">Masculino</mat-radio-button>
+            <mat-radio-button value="2">Femenino</mat-radio-button>
+            <mat-radio-button value="3">Otros</mat-radio-button>
+        </mat-radio-group>
+
+        <mat-form-field>
+            <input formControlName="birthday" matInput [matDatepicker]="picker" placeholder="Fecha de nacimiento">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </div>
+</form>

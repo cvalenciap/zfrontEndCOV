@@ -1,0 +1,87 @@
+$azure: #0ea6e4;
+$ocean-blue: #006eaa;
+$background-error: rgba(14,166,228,0.87);
+$light-blue: #00adfb;
+$white: #fff;
+$black: #000;
+$black-87: rgba(0, 0, 0, 0.87);
+$black-54: rgba(0, 0, 0, 0.54);
+$grass: #41b321;
+$invalid: #f44336;
+$banner-height: 5em;
+$sidenav-width: 15em;
+$background-color: #edf1fa;
+$font-size: 14px;
+$font-family: 'Open Sans', sans-serif;
+$yellow-orange: #f2b401;
+
+%text {
+  color: $black-87;
+  font-family: $font-family;
+  font-size: 16px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 0.3px;
+  line-height: normal;
+}
+
+%primaryButton {
+  background-color: $azure;
+  border-radius: 100px;
+  box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.16);
+  color: $white;
+  font-size: $font-size;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: normal;
+  outline: none;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+  @media (min-width: 420px) {
+    padding: 0 100px;
+    width: auto;
+  }
+}
+
+%primaryLink {
+  @extend %text;
+  color: $azure;
+  cursor: pointer;
+  font-size: $font-size;
+  text-decoration: underline;
+}
+
+%tablaModal {
+  width: 100%;
+  overflow: hidden;
+  border-color: #efefef;
+}
+
+%tdModal {
+  font-size: $font-size;
+  color: gray;
+  vertical-align: middle;
+  padding: 8px 12px;
+}
+
+%thModal {
+  font-size: $font-size;
+  color: black;
+}
+
+%tbodyModal {
+  overflow-y: auto; /* Trigger vertical scroll    */
+  overflow-x: hidden; /* Hide the horizontal scroll */
+}
+
+%container {
+  padding: 1em;
+  overflow-y: hidden;
+  background-color: #ffffff;
+  border-radius: .5em;
+  box-shadow: 0 2px 4px 0 rgba(143, 143, 143, 0.5);
+}
+
