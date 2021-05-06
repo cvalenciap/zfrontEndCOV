@@ -1,0 +1,18 @@
+@import "variables";
+
+.answer {
+  border: none;
+  background: none;
+  font-family: $font-family;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  text-align: center;
+  color: #0ea6e4;
+  text-decoration: underline;
+  cursor: pointer;
+  outline: none;
+}

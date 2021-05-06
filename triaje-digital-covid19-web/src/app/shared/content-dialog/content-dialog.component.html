@@ -1,0 +1,27 @@
+<div [ngSwitch]="data.dialogSRC">
+  <mat-dialog-content *ngSwitchCase="'error'" class="dialog">
+    <img src="assets/icons/icon-modal-error.svg"/>
+    <h3>Ha ocurrido un error</h3>
+    <p>{{ data.error }}</p>
+  </mat-dialog-content>
+  <mat-dialog-content *ngSwitchCase="'loginError'" class="dialog">
+    <img src="assets/icons/icon-modal-error.svg"/>
+    <h3>{{ data.title }}</h3>
+    <p>{{ data.error }}</p>
+    <div align="center" class="d-flex flex-column">
+      <button
+        class="mt-2"
+        color="primary"
+        mat-dialog-close="1"
+        mat-flat-button
+        type="submit"
+      >
+        REGÍSTRATE
+      </button>
+      <button class="link primary d-block mt-3" mat-dialog-close="0">
+        Intentar de nuevo
+      </button>
+    </div>
+  </mat-dialog-content>
+</div>
+<button mat-button mat-dialog-close class="dialogImage-close" *ngIf="!data.disableClose"></button>
